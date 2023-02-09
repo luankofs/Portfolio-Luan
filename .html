@@ -1,0 +1,335 @@
+<script type="text/javascript">
+  //<![CDATA[
+  var multiquote_img_off = '{JS_MULTIQUOTE_IMG_OFF}', multiquote_img_on = '{JS_MULTIQUOTE_IMG_ON}', _atr = '{JS_DIR}addthis/', _ati = '{PATH_IMG_FA}addthis/'{ADDTHIS_LANG}, addthis_localize = { share_caption: "{L_SHARE_CAPTION}", email: "{L_EMAIL}", email_caption: "{L_EMAIL_CAPTION}", favorites: "{L_SHARE_BOOKMARKS}", print: "{L_PRINT}", more: "{L_MORE}" };
+  
+  $(function(){
+      if(typeof(_atc) == "undefined") {
+          _atc = {  };
+      }
+  });
+  
+  var hiddenMsgLabel = { visible:'{JS_HIDE_HIDDEN_MESSAGE}', hidden:'{JS_SHOW_HIDDEN_MESSAGE}' };
+  showHiddenMessage = function(id)
+  {
+      try
+      {
+          var regId = parseInt(id, 10);
+          if( isNaN(regId) ) { regId = 0; }
+  
+          if( regId > 0)
+          {
+              $('.post--' + id).toggle(0, function()
+        {
+          if( $(this).is(":visible") )
+          {
+            $('#hidden-title--' + id).html(hiddenMsgLabel.visible);
+          }
+          else
+          {
+            $('#hidden-title--' + id).html(hiddenMsgLabel.hidden);
+          }
+        });
+          }
+      }
+      catch(e) { }
+  
+    return false;
+  };
+  
+  //]]>
+  </script>
+  
+  <div class="botoes">
+  
+  <div align="right">	<!-- BEGIN switch_user_authpost -->
+  <a href="{U_POST_NEW_TOPIC}" rel="nofollow">
+  <div class="novapostagem">
+  <i class="fas fa-envelope-open-text"></i>
+  Novo Tópico</div></a>
+  <!-- END switch_user_authpost -->
+  
+  <!-- BEGIN switch_user_authreply -->
+  <a href="{U_POST_REPLY_TOPIC}">
+  <div class="novapostagem">
+  <i class="far fa-comment-dots"></i>
+  Responder</div></a>
+  <!-- END switch_user_authreply --></div>
+  
+  </div>
+  
+  <!-- BEGIN topicpagination -->
+  <p class="pagination">{PAGINATION}</p>
+  <!-- END topicpagination -->
+  
+  <h1 class="page-title">
+    <a href="{TOPIC_URL}">{TOPIC_TITLE}</a>
+  </h1>
+  
+  <div class="pathname-box">
+  <p><a class="nav" href="{U_INDEX}">{L_INDEX}</a>{NAV_SEP}<a class="nav" href="{U_ALBUM}">{L_ALBUM}</a>{NAV_CAT_DESC}</p>
+  </div>
+  <br />
+  
+  <div class="clear"></div>
+  {POLL_DISPLAY}
+  
+  <!-- BEGIN postrow -->
+    <!-- BEGIN hidden -->
+      <div class="post {postrow.hidden.ROW_COUNT}">
+        <div class="inner">
+          <span class="corners-top"><span></span></span>
+          <p style="text-align:center">{postrow.hidden.MESSAGE}</p>
+          <div class="clear"></div>
+          <span class="corners-bottom"><span></span></span>
+        </div>
+      </div>
+    <!-- END hidden -->
+    <!-- BEGIN displayed -->
+      <div id="p{postrow.displayed.U_POST_ID}" class="post-corpo {postrow.displayed.ROW_COUNT}{postrow.displayed.ONLINE_IMG_NEW} post--{postrow.displayed.U_POST_ID}"{postrow.displayed.THANK_BGCOLOR} style="{postrow.displayed.DISPLAYABLE_STATE}">
+        <div class="inner"><span class="corners-top"><span></span></span>
+              <div style="position: relative; top: -30px; width: 1px;" id="{postrow.displayed.U_POST_ID}"></div>
+                            
+                            <div class="post-title"> <a href="">{postrow.displayed.POSTER_NAME}</a> 
+                                <div class="post-title-rank"> {postrow.displayed.POSTER_RANK_NEW}</div> 
+                            </div>
+                             <p class="author">Publicado {L_TOPIC_BY}&nbsp;{postrow.displayed.POSTER_NAME} {postrow.displayed.POST_DATE_NEW}</p>
+          
+        <div class="postbody">
+  
+  <ul class="profile-icons">
+  
+  <li>{postrow.displayed.QUOTE_IMG}</li>
+  <li>{postrow.displayed.EDIT_IMG}</li>
+  <li>{postrow.displayed.DELETE_IMG}</li>
+  <li>{postrow.displayed.IP_IMG}</li>
+  </ul>
+  
+                            <div class="clearfix"></div>
+  
+          <!-- BEGIN switch_vote_active -->
+          <div class="vote gensmall">
+            <!-- BEGIN switch_vote -->
+            <div class="vote-button"><a href="{postrow.displayed.switch_vote_active.switch_vote.U_VOTE_PLUS}">+</a></div>
+            <!-- END switch_vote -->
+  
+            <!-- BEGIN switch_bar -->
+            <div class="vote-bar" title="{postrow.displayed.switch_vote_active.L_VOTE_TITLE}">
+              <!-- BEGIN switch_vote_plus -->
+              <div class="vote-bar-plus" style="height:{postrow.displayed.switch_vote_active.switch_bar.switch_vote_plus.HEIGHT_PLUS}px;"></div>
+              <!-- END switch_vote_plus -->
+  
+              <!-- BEGIN switch_vote_minus -->
+              <div class="vote-bar-minus" style="height:{postrow.displayed.switch_vote_active.switch_bar.switch_vote_minus.HEIGHT_MINUS}px;"></div>
+              <!-- END switch_vote_minus -->
+            </div>
+            <!-- END switch_bar -->
+  
+            <!-- BEGIN switch_no_bar -->
+            <div title="{postrow.displayed.switch_vote_active.L_VOTE_TITLE}" class="vote-no-bar">----</div>
+            <!-- END switch_no_bar -->
+  
+            <!-- BEGIN switch_vote -->
+            <div class="vote-button"><a href="{postrow.displayed.switch_vote_active.switch_vote.U_VOTE_MINUS}">-</a></div>
+            <!-- END switch_vote -->
+          </div>
+          <!-- END switch_vote_active -->
+  
+          <div style="display:none"></div>
+          <div class="content clearfix">
+            <div>{postrow.displayed.MESSAGE}</div>
+              <!-- BEGIN switch_attachments -->
+              <dl class="attachbox">
+                <dt>{postrow.displayed.switch_attachments.L_ATTACHMENTS}</dt>
+                <dd class="attachments">
+                  <!-- BEGIN switch_post_attachments -->
+                  <dl class="file clearfix">
+                    <dt>
+                      <img src="{postrow.displayed.switch_attachments.switch_post_attachments.U_IMG}" alt=""/>
+                    </dt>
+                    <dd>
+                      <!-- BEGIN switch_dl_att -->
+                      <span><a class="postlink" href="{postrow.displayed.switch_attachments.switch_post_attachments.switch_dl_att.U_ATTACHMENT}">{postrow.displayed.switch_attachments.switch_post_attachments.switch_dl_att.ATTACHMENT}</a> {postrow.displayed.switch_attachments.switch_post_attachments.switch_dl_att.ATTACHMENT_DEL}</span>
+                      <!-- END switch_dl_att -->
+  
+                      <!-- BEGIN switch_no_dl_att -->
+                      <span>{postrow.displayed.switch_attachments.switch_post_attachments.switch_no_dl_att.ATTACHMENT} {postrow.displayed.switch_attachments.switch_post_attachments.switch_no_dl_att.ATTACHMENT_DEL}</span>
+                      <!-- END switch_no_dl_att -->
+  
+                      <!-- BEGIN switch_no_comment -->
+                      <span>{postrow.displayed.switch_attachments.switch_post_attachments.switch_no_comment.ATTACHMENT_COMMENT}</span>
+                      <!-- END switch_no_comment -->
+  
+                      <!-- BEGIN switch_no_dl_att -->
+                      <span><strong>{postrow.displayed.switch_attachments.switch_post_attachments.switch_no_dl_att.TEXT_NO_DL}</strong></span>
+                      <!-- END switch_no_dl_att -->
+  
+                      <span>({postrow.displayed.switch_attachments.switch_post_attachments.FILE_SIZE}) {postrow.displayed.switch_attachments.switch_post_attachments.NB_DL}</span>
+                    </dd>
+                  </dl>
+                  <!-- END switch_post_attachments -->
+                </dd>
+              </dl>
+              <!-- END switch_attachments -->
+          </div>
+          {postrow.displayed.EDITED_MESSAGE}
+          <!-- BEGIN switch_signature -->
+          <div class="signature_div" id="sig{postrow.displayed.U_POST_ID}">{postrow.displayed.SIGNATURE_NEW}</div>
+          <!-- END switch_signature -->
+        </div>
+        
+                          <div class="sticky-profile">
+        <div class="postprofile" id="profile{postrow.displayed.U_POST_ID}">
+           
+                           <div class="perfil-corpo">              
+                             
+                              <div class="perfil-avatar">
+                               {postrow.displayed.POSTER_AVATAR}
+                           </div>
+                             <div class="post-header">
+                               <div class="post-nome">{postrow.displayed.POSTER_NAME}</div>
+                             <div class="post-rank">{postrow.displayed.POSTER_RANK_NEW}</div>
+                           </div>
+                             <div class="perfil-color"></div>
+                                
+                                <div class="perfil-dados">
+                                  <!-- BEGIN profile_field -->
+              {postrow.displayed.profile_field.LABEL} {postrow.displayed.profile_field.CONTENT}{postrow.displayed.profile_field.SEPARATOR}
+              <!-- END profile_field -->
+                                  <div class="perfil-dadosrpg"> {postrow.displayed.POSTER_RPG}</div>
+                                </div>
+  </div>
+        </div>
+  
+        </div>
+                    </div>
+      </div>
+      <!-- BEGIN first_post_br -->
+      <hr id="first-post-br" />
+      <!-- END first_post_br -->
+    <!-- END displayed -->
+  <!-- END postrow -->
+  
+  <a name="bottomtitle"></a>
+  <div class="clear"></div>
+  
+  <div class="noprint">
+  <!-- BEGIN switch_user_logged_in -->
+  <!-- BEGIN watchtopic -->
+  <p class="right">{S_WATCH_TOPIC}</p>
+  <!-- END watchtopic -->
+  <!-- END switch_user_logged_in -->
+  </div>
+  
+  <!-- BEGIN promot_trafic -->
+  <div class="post row2" id="ptrafic_close" style="display:none;font-size:1.3em;line-height:1.4em">
+    <span class="corners-top"><span></span></span>
+    <span class="gensmall"><a href="javascript:ShowHideLayer('ptrafic_open','ptrafic_close');"><img src="{TABS_MORE_IMG}" alt="+" align="" border="0" /></a></span>
+    <span class="ptrafic">&nbsp;{PROMOT_TRAFIC_TITLE}</span>
+    <span class="corners-bottom"><span></span></span>
+  </div>
+  <div class="post row2" id="ptrafic_open" style="display:'';font-size:1.3em;line-height:1.4em">
+    <span class="corners-top"><span></span></span>
+    <span class="gensmall"><a href="javascript:ShowHideLayer('ptrafic_open','ptrafic_close');"><img src="{TABS_LESS_IMG}" alt="-" align="" border="0" /></a></span>
+    <span class="ptrafic">&nbsp;{PROMOT_TRAFIC_TITLE}</span>
+    <div class="clear"></div>
+    <div>
+      <!-- BEGIN link -->
+      &raquo;&nbsp;<a href="{promot_trafic.link.U_HREF}" title="{promot_trafic.link.TITLE}" rel="nofollow">{promot_trafic.link.TITLE}</a><br />
+      <!-- END link -->
+    </div>
+    <span class="corners-bottom"><span></span></span>
+  </div>
+  <!-- END promot_trafic -->
+  
+  <!-- BEGIN switch_forum_rules -->
+  <div class="post row1" id="forum_rules">
+    <span class="corners-top"><span></span></span>
+    <div class="h3">&nbsp;{L_FORUM_RULES}</div>
+    <div class="clear"></div>
+    <table class="postbody">
+      <tr>
+        <!-- BEGIN switch_forum_rule_image -->
+        <td class="logo">
+          <img src="{RULE_IMG_URL}" alt="" />
+        </td>
+        <!-- END switch_forum_rule_image -->
+        <td class="rules content">
+          {RULE_MSG}
+        </td>
+      </tr>
+    </table>
+    <span class="corners-bottom"><span></span></span>
+  </div>
+  <!-- END switch_forum_rules -->
+  
+  <!-- BEGIN switch_user_logged_in -->
+  <a name="quickreply"></a>
+  {QUICK_REPLY_FORM}
+  <!-- END switch_user_logged_in -->
+  
+  <hr />
+  
+  <div align="right">	<!-- BEGIN switch_user_authpost -->
+  <a href="{U_POST_NEW_TOPIC}" rel="nofollow">
+  <div class="novapostagem">
+  <i class="fas fa-envelope-open-text"></i>
+  Novo Tópico</div></a>
+  <!-- END switch_user_authpost -->
+  
+  <!-- BEGIN switch_user_authreply -->
+  <a href="{U_POST_REPLY_TOPIC}">
+  <div class="novapostagem">
+  <i class="far fa-comment-dots"></i>
+  Responder</div></a>
+  <!-- END switch_user_authreply --></div>
+  <!-- BEGIN topicpagination -->
+  <p class="pagination">{PAGINATION}</p>
+  <!-- END topicpagination -->
+  <div class="topic-actions">
+  
+  <div class="pathname-box">
+  <p><a class="nav" href="{U_INDEX}">{L_INDEX}</a>{NAV_SEP}<a class="nav" href="{U_ALBUM}">{L_ALBUM}</a>{NAV_CAT_DESC}</p>
+  </div>
+    
+  
+  </div>
+  <div class="clear"></div>
+  
+  <form action="{S_JUMPBOX_ACTION}" method="get" onsubmit="if(document.jumpbox.f.value == -1){return false;}">
+  <fieldset class="jumpbox">
+    <label>{L_JUMP_TO}:&nbsp;</label>
+    {S_JUMPBOX_SELECT}&nbsp;
+    <input class="button2" type="submit" value="{L_GO}" />
+  </fieldset>
+  </form>
+  
+  <!-- BEGIN viewtopic_bottom -->
+  <form method="get" action="{S_FORM_MOD_ACTION}">
+  <fieldset class="quickmod">
+    <input type="hidden" name="t" value="{TOPIC_ID}" />
+  
+    <!-- <input type="hidden" name="sid" value="{S_SID}" /> -->
+    <input type="hidden" name="{SECURE_ID_NAME}" value="{SECURE_ID_VALUE}" />
+    <label>{L_MOD_TOOLS}:&nbsp;</label>
+    {S_SELECT_MOD}&nbsp;
+    <input class="button2" type="submit" value="{L_GO}" />
+  </fieldset>
+  </form>
+  <div class="clear"></div>
+  <p class="right">{S_TOPIC_ADMIN}</p>
+  <!-- END viewtopic_bottom -->
+  
+  <!-- BEGIN show_permissions -->
+    <div class="h3">{L_TABS_PERMISSIONS}</div>
+    {S_AUTH_LIST}
+  <!-- END show_permissions -->
+  
+  <!-- BEGIN switch_image_resize -->
+  <script type="text/javascript">
+  //<![CDATA[
+  $(resize_images({ 'selector' : '.postbody .content', 'max_width' : {switch_image_resize.IMG_RESIZE_WIDTH}, 'max_height' : {switch_image_resize.IMG_RESIZE_HEIGHT} }));
+  //]]>
+  </script>
+  <!-- END switch_image_resize -->
+  
+  <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=forumotion" type="text/javascript"></script>
