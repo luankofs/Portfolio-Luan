@@ -384,6 +384,29 @@ const Projects = (props) => {
         React.createElement(
           Project,
           {
+            title: "FlexBlog.",
+            img: "https://i.ibb.co/SVHGYLZ/Screenshot-1.png",
+            tech: "css js",
+            link: "#",
+            repo: "#",
+          } /*#__PURE__*/,
+
+          React.createElement(
+            "small",
+            null,
+            "Construido usando CSS e JavaScript."
+          ) /*#__PURE__*/,
+
+          React.createElement(
+            "p",
+            null,
+            "Criação de landing page com precificação de produtos."
+          )
+        ) /*#__PURE__*/,
+
+        React.createElement(
+          Project,
+          {
             title: "Landing Page",
             img: "https://i.ibb.co/YtMYmHp/Screenshot-1-resized-1.png",
             tech: "js css",
