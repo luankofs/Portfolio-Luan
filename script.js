@@ -148,12 +148,12 @@ const Header = (props) => {
         React.createElement(
           "a",
           { href: "#projects" },
-          "my portfolio"
+          "Meu portfólio"
         ) /*#__PURE__*/,
         React.createElement(
           "a",
           { href: "#contact", className: "cta" },
-          "get in touch"
+          "Entre em contato"
         )
       )
     )
@@ -220,7 +220,7 @@ const About = (props) => {
           React.createElement(
             "p",
             null,
-            "Adentrei nesse mercado há quase um ano. Busco firmar experiência, e com isso estou sempre em aprendizado. Meu principal foco é JavaScript, sempre tentando me aplicar e aprimorar na tecnologia. Também deixo tudo mais bonito com CSS e SASS, e sempre que necessário uso alguns dos meus melhores amigos: bootstrap, bulma, etc."
+            "Adentrei nesse mercado há quase um ano. Busco firmar experiência, e com isso estou sempre em aprendizado. Meu principal foco é JavaScript, sempre tentando me aplicar e aprimorar na tecnologia. Também deixo tudo mais bonito com CSS e SASS, e sempre que necessário uso alguns dos meus melhores amigos: tailwindCSS, bootstrap, bulma, etc."
           ) /*#__PURE__*/
         ) /*#__PURE__*/,
 
@@ -384,22 +384,22 @@ const Projects = (props) => {
         React.createElement(
           Project,
           {
-            title: "Technical Documentation Page.",
-            img: "https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Documentify.jpg",
-            tech: "js react css",
-            link: "https://codepen.io/yagoestevez/full/QxOLKX/",
-            repo: "https://github.com/yagoestevez/documentify",
+            title: "Landing Page",
+            img: "https://i.ibb.co/YtMYmHp/Screenshot-1-resized-1.png",
+            tech: "js css",
+            link: "#",
+            repo: "#",
           } /*#__PURE__*/,
 
           React.createElement(
             "small",
             null,
-            "Built using React and CSS."
+            "Construído usando CSS + JS."
           ) /*#__PURE__*/,
           React.createElement(
             "p",
             null,
-            "A technical documentation page made for a little React library I published on NPM."
+            "Uma simples página para uma série de palestras sobre marketing digital. Design construído no figma e codificando do zero. Não foi usado frameworks neste projeto."
           )
         )
       )
@@ -458,7 +458,11 @@ const Contact = (props) => {
 
       React.createElement(
         "form",
-        { id: "contact-form", action: "#" } /*#__PURE__*/,
+        {
+          id: "contact-form",
+          action: "https://formsubmit.co/luanolivfurlan@gmail.com",
+          method: "post",
+        } /*#__PURE__*/,
         React.createElement("input", {
           placeholder: "Nome",
           name: "name",
@@ -476,10 +480,14 @@ const Contact = (props) => {
           type: "text",
           name: "message",
         }) /*#__PURE__*/,
+        React.createElement("hidden", {
+          name: "_next",
+          value: "",
+        }) /*#__PURE__*/,
         React.createElement("input", {
           className: "button",
           id: "submit",
-          value: "Submit",
+          value: "Enviar",
           type: "submit",
         })
       )
@@ -522,10 +530,10 @@ const SocialLinks = (props) => {
     React.createElement(
       "a",
       {
-        href: "https://twitter.com/yagoestevez",
+        href: "https://twitter.com/luankofs",
         target: "_blank",
         rel: "noopener noreferrer",
-        title: "Link to author's Twitter profile",
+        title: "Link para meu perfil no Twitter",
       },
 
       " " /*#__PURE__*/,
@@ -536,28 +544,15 @@ const SocialLinks = (props) => {
       "a",
       {
         id: "profile-link",
-        href: "https://github.com/yagoestevez",
+        href: "https://github.com/luankofs",
         target: "_blank",
         rel: "noopener noreferrer",
-        title: "Link to author's GitHub Profile",
+        title: "Link para o meu perfil do github",
       },
 
       " " /*#__PURE__*/,
       React.createElement("i", { className: "fab fa-github" })
-    ) /*#__PURE__*/,
-
-    React.createElement(
-      "a",
-      {
-        href: "https://codepen.io/yagoestevez",
-        target: "_blank",
-        rel: "noopener noreferrer",
-        title: "Link to author's Codepen Profile",
-      },
-
-      " " /*#__PURE__*/,
-      React.createElement("i", { className: "fab fa-codepen" })
-    )
+    ) /*#__PURE__*/
   );
 };
 
