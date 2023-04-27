@@ -387,7 +387,7 @@ const Projects = (props) => {
             title: "FlexBlog.",
             img: "https://i.ibb.co/SVHGYLZ/Screenshot-1.png",
             tech: "css js",
-            link: "#",
+            link: "https://luankofs.github.io/Flexblog/",
             repo: "#",
           } /*#__PURE__*/,
 
