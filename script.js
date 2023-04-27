@@ -386,7 +386,7 @@ const Projects = (props) => {
           {
             title: "FlexBlog.",
             img: "https://i.ibb.co/SVHGYLZ/Screenshot-1.png",
-            tech: "css js",
+            tech: "css",
             link: "https://luankofs.github.io/Flexblog/",
             repo: "#",
           } /*#__PURE__*/,
@@ -401,6 +401,29 @@ const Projects = (props) => {
             "p",
             null,
             "Criação de landing page com precificação de produtos."
+          )
+        ) /*#__PURE__*/,
+
+        React.createElement(
+          Project,
+          {
+            title: "Portfólio Lobo.",
+            img: "https://i.ibb.co/3NBMyGP/Screenshot-2.jpg",
+            tech: "css js",
+            link: "https://luankofs.github.io/wolf-portfolio/",
+            repo: "#",
+          } /*#__PURE__*/,
+
+          React.createElement(
+            "small",
+            null,
+            "Projeto construído usando CSS e JS."
+          ) /*#__PURE__*/,
+
+          React.createElement(
+            "p",
+            null,
+            "Um projeto de landing page 'simples' portfólio, construído para o curso e cliente Lobo"
           )
         ) /*#__PURE__*/,
 
