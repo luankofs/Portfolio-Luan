@@ -361,6 +361,29 @@ const Projects = (props) => {
         React.createElement(
           Project,
           {
+            title: "Bikcraft.",
+            img: "https://i.ibb.co/YDwyrf4/Screenshot-1.jpg",
+            tech: "css js",
+            link: "https://luankofs.github.com/Bikcraft/",
+            repo: "#",
+          } /*#__PURE__*/,
+
+          React.createElement(
+            "small",
+            null,
+            "Construido usando CSS e JavaScript."
+          ) /*#__PURE__*/,
+
+          React.createElement(
+            "p",
+            null,
+            "Projeto criado do 0, utilizando técnicas flex e grid, animando todos os elementos com javascript, assim como pequenos detalhes (menus, galeria, etc)."
+          )
+        ) /*#__PURE__*/,
+
+        React.createElement(
+          Project,
+          {
             title: "Fórum RPG: Heroes of Olympus.",
             img: "https://i.ibb.co/9sdgnrx/hoo.jpg",
             tech: "js css jquery",
