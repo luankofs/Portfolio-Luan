@@ -364,7 +364,7 @@ const Projects = (props) => {
             title: "Bikcraft.",
             img: "https://i.ibb.co/YDwyrf4/Screenshot-1.jpg",
             tech: "css js",
-            link: "https://luankofs.github.com/Bikcraft/",
+            link: "https://luankofs.github.io/Bikcraft/",
             repo: "#",
           } /*#__PURE__*/,
 
