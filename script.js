@@ -361,6 +361,29 @@ const Projects = (props) => {
         React.createElement(
           Project,
           {
+            title: "Advocacia",
+            img: "https://i.ibb.co/f1779y6/Screenshot-1.jpg",
+            tech: "css js",
+            link: "https://luankofs.github.io/",
+            repo: "#",
+          } /*#__PURE__*/,
+
+          React.createElement(
+            "small",
+            null,
+            "Construído usando JS, CSS e Figma"
+          ) /*#__PURE__*/,
+
+          React.createElement(
+            "p",
+            null,
+            "Projeto criado utilizando o figma e logo após desenvolvendo o site para a advocacia, utilizando técnicas de grid-layout e flex-box, finalizando com JavaScript animando elementos, menu totalmente interativo e mobile, além de galerias, etc."
+          )
+        ) /*#__PURE__*/,
+
+        React.createElement(
+          Project,
+          {
             title: "Bikcraft.",
             img: "https://i.ibb.co/YDwyrf4/Screenshot-1.jpg",
             tech: "css js",
